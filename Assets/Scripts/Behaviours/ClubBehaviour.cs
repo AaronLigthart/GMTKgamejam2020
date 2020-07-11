@@ -4,38 +4,55 @@ using UnityEngine;
 
 public class ClubBehaviour : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+
+    public CLUBPROGRESS ownProgress = CLUBPROGRESS.DETERMINE_POSITION;
+    public GameObject ball, visual;
+    public GameObject Grip;
+
+    public enum CLUBPROGRESS
     {
-        Rigidbody t = collision.gameObject.GetComponent<Rigidbody>();
-        if (t != null)
-        {
-            Debug.Log("Work");
-            t.AddRelativeForce(Vector3.forward * 1050);
-        }
-
-
+        DETERMINE_POSITION,
+        DETERMINE_POWER,
+        HIT,
     }
 
     Vector3 StartPosition,ProgressPosition, EndPosition;
     private void Update()
     {
-        transform.RotateAround(transform.position, Vector3.up, 20 * Time.deltaTime);
-        if (Input.GetMouseButtonDown(0))
+        if (ownProgress == CLUBPROGRESS.DETERMINE_POSITION)
         {
-            StartPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-            Debug.Log("pos = " + StartPosition);
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray,out hit,20)){
+                if (hit.transform.name == "Plane")
+                {
+                    Vector3 targetPosition= new Vector3(hit.point.x, transform.position.y, hit.point.z);
+                    Grip.transform.position = Vector3.Lerp(transform.position,targetPosition,0.5f);
+                    visual.transform.LookAt(ball.transform.position);
+                }
+            }
+
+            //transform.position = new Vector3(MousePos.x, transform.position.y, MousePos.y);
+            if (Input.GetMouseButtonDown(0))
+            {
+                StartPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+                //ownProgress = CLUBPROGRESS.DETERMINE_POWER;
+            }
         }
-        if (Input.GetMouseButton(0))
+        else if(ownProgress == CLUBPROGRESS.DETERMINE_POWER)
         {
-            ProgressPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-            float DifferenceX = ((StartPosition.x - ProgressPosition.x) * 5);
-            transform.Rotate(transform.rotation.x + DifferenceX, transform.rotation.y , transform.rotation.z);
-            Debug.Log("pos = " + ProgressPosition);
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            StartPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-            Debug.Log("pos = " + StartPosition);
+            if (Input.GetMouseButton(0))
+            {
+                ProgressPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+                float DifferenceX = ((StartPosition.x - ProgressPosition.x));
+                transform.RotateAround(this.transform.position, new Vector3(DifferenceX, 0, 0),1);
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                StartPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+            }
+
         }
     }
+
 }
