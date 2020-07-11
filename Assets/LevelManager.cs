@@ -7,6 +7,8 @@ public class LevelManager : MonoBehaviour
     public List<GameObject> levels;
     public int currentLevelIndex;
     public GameObject currentLevel;
+    public GameManager gameManager;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,5 +30,14 @@ public class LevelManager : MonoBehaviour
     public void SpawnLevel(GameObject level)
     {
         Instantiate(level, new Vector3(0, 0, 0), Quaternion.identity);
+        this.SetProperties(level);
+
+    }
+    public void SetProperties(GameObject level)
+    {
+        Level levelProperties = level.GetComponent<Level>();
+        gameManager.hole = levelProperties.hole;
+        gameManager.spawnPositon = levelProperties.spawnPoint;
+
     }
 }

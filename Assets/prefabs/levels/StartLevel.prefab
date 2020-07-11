@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 7284082417981382495}
-  Hole: {fileID: 3690397508393628036}
+  hole: {fileID: 3690397508393628036}
 --- !u!1001 &973777927400432383
 PrefabInstance:
   m_ObjectHideFlags: 0

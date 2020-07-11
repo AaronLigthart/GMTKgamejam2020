@@ -5,7 +5,8 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject ball;
+    public LevelManager levelManager;
+        public GameObject ball;
     public GameObject spawnPositon;
     public GameObject hole;
     public Transform cameraFocusPoint;
@@ -23,7 +24,16 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        levelManager.SpawnLevel(levelManager.levels[0]);
         ballRigidbody = ball.GetComponent<Rigidbody>();
+
+        Invoke("LateStart", 0.1f);
+
+    }
+
+    void LateStart()
+    {
+        this.ResetBall();
     }
 
     public void Update()
@@ -57,6 +67,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetBall()
     {
+        ball.GetComponent<Ball>().spawnPoint = this.spawnPositon;
         ball.GetComponent<Ball>().Reset();
     }
 }
