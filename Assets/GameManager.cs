@@ -13,18 +13,8 @@ public class GameManager : MonoBehaviour
         ballRigidbody = ball.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ResetBall()
     {
-        var spawnPosition = new Vector3(spawnPositon.transform.position.x, spawnPositon.transform.position.y + ball.transform.localScale.y / 2, spawnPositon.transform.position.z);
-        ball.transform.SetPositionAndRotation(spawnPosition, spawnPositon.transform.rotation);
-        ballRigidbody.velocity = Vector3.zero;
-        ballRigidbody.angularVelocity = Vector3.zero;
-
+        ball.GetComponent<Ball>().Reset();
     }
 }
