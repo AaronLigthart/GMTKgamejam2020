@@ -1159,9 +1159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7861ca560135894eba792ad0ee4e815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outOfBoundsEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &1590108352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1677,6 +1674,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: spawn point
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536157701523602848, guid: fccdc7fec9e716646982a158eea52cdf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Spawn
       objectReference: {fileID: 0}
     - target: {fileID: 8406930915776341960, guid: fccdc7fec9e716646982a158eea52cdf,
         type: 3}

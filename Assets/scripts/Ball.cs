@@ -21,7 +21,7 @@ public class Ball : MonoBehaviour
 
     public void Reset()
     {
-        var spawnPosition = new Vector3(this.spawnPosition.transform.position.x, this.spawnPosition.transform.position.y + transform.localScale.y / 2, this.spawnPosition.transform.position.z);
+        Vector3 spawnPosition = new Vector3(this.spawnPosition.transform.position.x, this.spawnPosition.transform.position.y + transform.localScale.y / 2, this.spawnPosition.transform.position.z);
         transform.SetPositionAndRotation(spawnPosition, this.spawnPosition.transform.rotation);
         ballRigidbody.velocity = Vector3.zero;
         ballRigidbody.angularVelocity = Vector3.zero;

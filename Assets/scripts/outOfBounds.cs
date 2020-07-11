@@ -6,7 +6,6 @@ using UnityEngine.Events;
 
 public class outOfBounds : MonoBehaviour
 {
-    public UnityEvent outOfBoundsEvent;
 
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
@@ -14,7 +13,6 @@ public class outOfBounds : MonoBehaviour
         if(other.tag == "Ball")
         {
             other.GetComponent<Ball>().Reset();
-
         }
     }
 }
