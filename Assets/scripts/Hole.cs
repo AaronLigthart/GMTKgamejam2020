@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class Hole : MonoBehaviour
 {
-    public UnityEvent onPut;
 
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-        print(other.tag);
-        onPut.Invoke();
+       if(other.tag == "Ball")
+        {
+            other.GetComponent<Ball>().Reset();
+        }
     }
     
         
