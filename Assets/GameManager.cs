@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
         public GameObject ball;
     public GameObject spawnPositon;
     public GameObject hole;
-    public Transform cameraFocusPoint;
+    public GameObject cameraFocusPoint;
 
     private Rigidbody ballRigidbody;
     public TextMeshProUGUI instructionText;
@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        levelManager.SpawnLevel(levelManager.levels[0]);
         ballRigidbody = ball.GetComponent<Rigidbody>();
 
         Invoke("LateStart", 0.1f);
@@ -33,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     void LateStart()
     {
+        levelManager.SpawnLevel(levelManager.levels[0]);
         this.ResetBall();
     }
 
@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
         Vector3 pointB = this.hole.transform.position; // Position of objectB
         Vector3 pointC = Vector3.Lerp(pointA, pointB, focusPriority);
 
-        this.cameraFocusPoint.position = Vector3.Lerp(this.cameraFocusPoint.position, pointC, 0.15f) ;
+        this.cameraFocusPoint.transform.position = Vector3.Lerp(this.cameraFocusPoint.transform.position, pointC, 0.15f); 
 
         distanceToHole = (Mathf.Round(Vector3.Distance(ball.transform.position, hole.transform.position) * 10f) / 10f) - 1;
         distanceText.SetText(distanceToHole + " m");
@@ -69,5 +69,6 @@ public class GameManager : MonoBehaviour
     {
         ball.GetComponent<Ball>().spawnPoint = this.spawnPositon;
         ball.GetComponent<Ball>().Reset();
+        
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ball
   - Spawn
+  - GameManager
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,8 @@ public class LevelManager : MonoBehaviour
     public List<GameObject> levels;
     public int currentLevelIndex;
     public GameObject currentLevel;
+    public GameObject currentSpawnedLevel;
+
     public GameManager gameManager;
 
 
@@ -14,22 +16,29 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         this.currentLevel = levels[currentLevelIndex];
-        this.SpawnLevel(this.currentLevel);
     }
 
     // Update is called once per frame
     public void gotoNextLevel()
     {
+        this.currentLevelIndex += 1;
+        print("count "+levels.Count);
+        if(this.currentLevelIndex > levels.Count-1)
+        {
+            this.currentLevelIndex = 0;
+        }
+        print(this.currentLevelIndex);
+        
         GameObject nextLevel = levels[this.currentLevelIndex];
-        this.currentLevel.SetActive(false);
+        Destroy(currentSpawnedLevel);
         SpawnLevel(nextLevel);
-        GameObject.Destroy(this.currentLevel);
         this.currentLevel = nextLevel;
+        print("hello");
     }
 
     public void SpawnLevel(GameObject level)
     {
-        Instantiate(level, new Vector3(0, 0, 0), Quaternion.identity);
+        currentSpawnedLevel = Instantiate(level, new Vector3(0, 0, 0), Quaternion.identity);
         this.SetProperties(level);
 
     }
@@ -38,6 +47,10 @@ public class LevelManager : MonoBehaviour
         Level levelProperties = level.GetComponent<Level>();
         gameManager.hole = levelProperties.hole;
         gameManager.spawnPositon = levelProperties.spawnPoint;
+        print("AAA" + gameManager.cameraFocusPoint.GetComponent<LookAt>().target);
+        gameManager.cameraFocusPoint.GetComponent<LookAt>().target = gameManager.hole.transform;
+        gameManager.ResetBall();
+
 
     }
 }

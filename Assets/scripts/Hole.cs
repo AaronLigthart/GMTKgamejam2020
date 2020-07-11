@@ -11,7 +11,7 @@ public class Hole : MonoBehaviour
     {
        if(other.tag == "Ball")
         {
-            other.GetComponent<Ball>().Reset();
+            other.GetComponent<Ball>().gameManager.levelManager.gotoNextLevel();
         }
     }
     

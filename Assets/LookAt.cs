@@ -11,4 +11,9 @@ public class LookAt : MonoBehaviour
     {
         transform.LookAt(target);
     }
+
+    public void SetTarget(GameObject newTarget)
+    {
+        target = newTarget.transform;
+    }
 }
