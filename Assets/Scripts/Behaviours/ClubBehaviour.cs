@@ -6,7 +6,7 @@ public class ClubBehaviour : MonoBehaviour
 {
 
     public CLUBPROGRESS ownProgress = CLUBPROGRESS.DETERMINE_POSITION;
-    public GameObject ball, visual;
+    public GameObject ball, visual,head;
     public GameObject Grip;
 
     public enum CLUBPROGRESS
@@ -17,27 +17,24 @@ public class ClubBehaviour : MonoBehaviour
     }
 
     Vector3 StartPosition,ProgressPosition, EndPosition;
+    Vector3 mOffset;
+    float mZCoord;
+    private void Start()
+    {
+        Cursor.visible = false;
+        mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
+        mOffset = Grip.transform.position - GetMouseWorldPos();
+        StartPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+    }
+
     private void Update()
     {
         if (ownProgress == CLUBPROGRESS.DETERMINE_POSITION)
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray,out hit,20)){
-                if (hit.transform.name == "Plane")
-                {
-                    Vector3 targetPosition= new Vector3(hit.point.x, transform.position.y, hit.point.z);
-                    Grip.transform.position = Vector3.Lerp(transform.position,targetPosition,0.5f);
-                    visual.transform.LookAt(ball.transform.position);
-                }
-            }
+            Vector3 targetPos = GetMouseWorldPos() + mOffset;
+            targetPos.y = Grip.transform.position.y;
+            Grip.transform.position = targetPos;
 
-            //transform.position = new Vector3(MousePos.x, transform.position.y, MousePos.y);
-            if (Input.GetMouseButtonDown(0))
-            {
-                StartPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-                //ownProgress = CLUBPROGRESS.DETERMINE_POWER;
-            }
         }
         else if(ownProgress == CLUBPROGRESS.DETERMINE_POWER)
         {
@@ -53,6 +50,18 @@ public class ClubBehaviour : MonoBehaviour
             }
 
         }
+    }
+
+    private void OnMouseDown()
+    {
+        
+    }
+
+    Vector3 GetMouseWorldPos()
+    {
+        Vector3 mousPos = Input.mousePosition;
+        mousPos.z = mZCoord;
+        return Camera.main.ScreenToWorldPoint(mousPos);
     }
 
 }
