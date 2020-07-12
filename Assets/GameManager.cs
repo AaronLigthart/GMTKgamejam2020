@@ -71,4 +71,9 @@ public class GameManager : MonoBehaviour
         ball.GetComponent<Ball>().Reset();
         
     }
+
+    public void DoEvent(string eventName)
+    {
+        print(eventName);
+    }
 }
