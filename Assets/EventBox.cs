@@ -5,7 +5,7 @@ using UnityEngine;
 public class EventBox : MonoBehaviour
 {
     public GameManager gameManager;
-    public enum Event { flipScreen, smallBall, bigball, air, ballShape, randomHoles, COUNT };
+    public enum Event { flipScreen, smallBall, bigBall, COUNT };
     public List<Sprite> eventSprites;
     public SpriteRenderer icon;
     // Start is called before the first frame update
