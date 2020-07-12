@@ -15,11 +15,12 @@ public class ClubBehaviour : MonoBehaviour
     private EventController _evenController;
     private void Start()
     {
-
+        Cursor.visible = false;
     }
 
     private void OnEnable()
     {
+        _evenController = EventController.Instance;
         _evenController.BallIsHit += OnBallHit;
     }
 
