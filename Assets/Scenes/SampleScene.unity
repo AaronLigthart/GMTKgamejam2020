@@ -455,8 +455,8 @@ FixedJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 0
-  m_MassScale: 0.1
+  m_EnablePreprocessing: 1
+  m_MassScale: 0.3
   m_ConnectedMassScale: 1
 --- !u!54 &677063601
 Rigidbody:
@@ -613,7 +613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1de3ad351d28d4c88195e06db5189a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownProgress: 0
   ball: {fileID: 1798806343}
   visual: {fileID: 677063598}
   head: {fileID: 1845652427}
@@ -1735,7 +1734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1de3ad351d28d4c88195e06db5189a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownProgress: 0
   ball: {fileID: 1798806343}
   visual: {fileID: 1082164971}
   head: {fileID: 0}
