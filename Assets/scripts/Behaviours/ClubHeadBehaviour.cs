@@ -5,30 +5,43 @@ using UnityEngine;
 public class ClubHeadBehaviour : MonoBehaviour
 {
     public Rigidbody t;
-    private void OnCollisionEnter(Collision collision)
+    public LineRenderer line;
+    public List<Vector3> VelocityPower = new List<Vector3>();
+
+    private void Start()
     {
-        Rigidbody t = collision.gameObject.GetComponent<Rigidbody>();
-        Debug.Log("Work?");
-        if (t != null)
-        {
-            Debug.Log("Work = " + Vector3.Normalize(t.velocity) + " - " +CheckReceivedDirection(t.transform.position));
-            Vector3 x = (Vector3.Normalize(t.velocity) + CheckReceivedDirection(t.transform.position)) * 1000;
-            x.y = 0;
-            t.AddForce(x);//CheckReceivedDirection(collision.transform.position) * 1050);
-        }
-
-
+        StartCoroutine(CheckVelocityPower());
     }
 
-    private void OnTriggerEnter(Collider other)
+     private IEnumerator CheckVelocityPower()
     {
-        Rigidbody t = other.gameObject.GetComponent<Rigidbody>();
-        Debug.Log("blues?");
+        while (true)
+        {
+            VelocityPower.Add(t.velocity);
+            if (VelocityPower.Count > 5)
+            {
+                VelocityPower.RemoveAt(0);
+            }
+            yield return new WaitForSeconds(0.2f);
+
+        }
+        yield return new WaitForEndOfFrame();
+    }
+    private void OnTriggerEnter(Collider collision)
+    {
+        Rigidbody t = collision.gameObject.GetComponent<Rigidbody>();
         if (t != null)
         {
-            Debug.Log("blues");
-            t.AddRelativeForce(Vector3.forward * 1050);
+            Vector3 x = ((t.velocity) + CheckReceivedDirection(t.transform.position) * (10*Vector3.Distance(VelocityPower[0], VelocityPower[VelocityPower.Count - 1])));
+            VelocityPower.Clear();
+            x.y = 0;
+            line.SetPosition(0, t.transform.position);
+            line.SetPosition(1, t.transform.position + (x));
+            t.AddForce(x * 100);
+            Debug.Log(t.gameObject.name + " -- " + x + "WORK");
         }
+
+
     }
 
     private Vector3 CheckReceivedDirection(Vector3 targetPosition)
