@@ -12,6 +12,13 @@ public class BallForceBehaviour : MonoBehaviour
     public LineRenderer line;
     public GameObject ball;
     Vector3 targetPos;
+    private GameManager _gameManager;
+    private void Start()
+    {
+        _gameManager = GameManager.Instance;
+        ball = _gameManager.ball;
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))

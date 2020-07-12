@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 152689751}
+  currentCameraOption: 0
   minDistanceToFocus: 5
   maxDistanceToFocus: 30
   minDistance: 5
@@ -495,6 +496,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 152689751}
+  eventSprites: []
+  icon: {fileID: 0}
   eventOnHit: 4
 --- !u!1 &963194225
 GameObject:
@@ -1528,6 +1531,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 326690031458739173, guid: e9ed56c5d77c64245b2d731e6d78837d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262727811202307014, guid: e9ed56c5d77c64245b2d731e6d78837d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6287502017312699872, guid: e9ed56c5d77c64245b2d731e6d78837d,
         type: 3}
       propertyPath: m_Name
@@ -1598,6 +1611,11 @@ PrefabInstance:
       propertyPath: spawn
       value: 
       objectReference: {fileID: 670039350}
+    - target: {fileID: 7577441011871861600, guid: e9ed56c5d77c64245b2d731e6d78837d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ed56c5d77c64245b2d731e6d78837d, type: 3}
 --- !u!1001 &7594682386315374626
