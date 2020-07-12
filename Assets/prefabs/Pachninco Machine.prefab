@@ -98,7 +98,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8468607377195831539
 Transform:
   m_ObjectHideFlags: 0
@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3258458225613541736}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.043, y: 112.2, z: -4.005259}
+  m_LocalPosition: {x: -0.043, y: 26.5, z: -4.005259}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6287502017312699873}
@@ -689,6 +689,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6925715169898103841, guid: 3bfedabab359053429e1cf43d7783e70,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9058663781122463532, guid: 3bfedabab359053429e1cf43d7783e70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -849,6 +854,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6925715169898103841, guid: 3bfedabab359053429e1cf43d7783e70,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9058663781122463532, guid: 3bfedabab359053429e1cf43d7783e70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -928,6 +938,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925715169898103841, guid: 3bfedabab359053429e1cf43d7783e70,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9058663781122463532, guid: 3bfedabab359053429e1cf43d7783e70,
         type: 3}
@@ -1009,6 +1024,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6925715169898103841, guid: 3bfedabab359053429e1cf43d7783e70,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9058663781122463532, guid: 3bfedabab359053429e1cf43d7783e70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1089,6 +1109,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6925715169898103841, guid: 3bfedabab359053429e1cf43d7783e70,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9058663781122463532, guid: 3bfedabab359053429e1cf43d7783e70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1168,6 +1193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925715169898103841, guid: 3bfedabab359053429e1cf43d7783e70,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9058663781122463532, guid: 3bfedabab359053429e1cf43d7783e70,
         type: 3}
@@ -4999,6 +5029,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6925715169898103841, guid: 3bfedabab359053429e1cf43d7783e70,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9058663781122463532, guid: 3bfedabab359053429e1cf43d7783e70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5078,6 +5113,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925715169898103841, guid: 3bfedabab359053429e1cf43d7783e70,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9058663781122463532, guid: 3bfedabab359053429e1cf43d7783e70,
         type: 3}

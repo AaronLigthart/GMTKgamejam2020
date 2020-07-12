@@ -841,20 +841,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3736224534173861415}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1798806349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798806343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d171ce908be4f04449b516356b88d036, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 152689751}
-  spawnPoint: {fileID: 0}
 --- !u!1 &1815025830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,6 +1024,8 @@ MonoBehaviour:
   levels:
   - {fileID: 4609299161993951799, guid: 23c0fdeb8d9d45347af3965530c08df4, type: 3}
   - {fileID: 4609299161993951799, guid: 6031563047ca5b64fb9bc274466d3e15, type: 3}
+  - {fileID: 4609299161993951799, guid: b5724fca5f0803f4d9a5d737071a4c26, type: 3}
+  - {fileID: 4609299161993951799, guid: 866d9b1e63ccd974f816a977195ac075, type: 3}
   currentLevelIndex: 0
   currentLevel: {fileID: 0}
   currentSpawnedLevel: {fileID: 0}
@@ -1261,15 +1249,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1798806349, guid: 847dfa9959ea9ce42b8cac0143dab143, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 152689751}
     - target: {fileID: 3736224534898924896, guid: 847dfa9959ea9ce42b8cac0143dab143,
         type: 3}
       propertyPath: m_Name
       value: Ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 3736224534898924896, guid: 847dfa9959ea9ce42b8cac0143dab143,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3736224534898924907, guid: 847dfa9959ea9ce42b8cac0143dab143,
         type: 3}
@@ -1325,21 +1312,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3736224534898924911, guid: 847dfa9959ea9ce42b8cac0143dab143,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3736224534898924911, guid: 847dfa9959ea9ce42b8cac0143dab143,
-        type: 3}
-      propertyPath: m_Drag
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3736224534898924911, guid: 847dfa9959ea9ce42b8cac0143dab143,
-        type: 3}
-      propertyPath: m_Mass
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 847dfa9959ea9ce42b8cac0143dab143, type: 3}
