@@ -12,8 +12,8 @@ public class PachincoManager : MonoBehaviour
     void Start()
     {
         pachincoCamera.enabled = false;
-
         ball.transform.SetPositionAndRotation(getRandomStartPosition(), Quaternion.identity);
+        
     }
 
     public Vector3 getRandomStartPosition()
@@ -34,12 +34,15 @@ public class PachincoManager : MonoBehaviour
 
     public void Stop()
     {
+
         Invoke("TurnOffCamera", 1);
     }
 
     public void TurnOffCamera()
     {
         pachincoCamera.enabled = false;
+        ball.SetActive(false);
+
     }
 
     // Update is called once per frame

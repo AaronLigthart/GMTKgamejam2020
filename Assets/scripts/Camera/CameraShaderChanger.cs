@@ -49,6 +49,7 @@ public class CameraShaderChanger : MonoBehaviour
                 AURAShader.enabled = true;
                 break;
             case CAMERA_SHADER.DRUNK1:
+                Debug.Log("PLS DO IT");
                 DRUNKONEShader.enabled = true;
                 break;
             case CAMERA_SHADER.DRUNK2:
