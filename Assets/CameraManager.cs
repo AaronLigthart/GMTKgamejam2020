@@ -6,6 +6,7 @@ public class CameraManager : MonoBehaviour
 {
     public GameManager gameManager;
     private Camera camera;
+    public CAMERA_OPTION currentCameraOption = CAMERA_OPTION.BIRD_VIEW;
 
     public float minDistanceToFocus;
     public float maxDistanceToFocus;
@@ -13,6 +14,8 @@ public class CameraManager : MonoBehaviour
     public float maxDistance;
     public float minZoom;
     public float maxZoom;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -23,22 +26,31 @@ public class CameraManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameManager.distanceToHole >= minDistance && gameManager.distanceToHole <= maxDistance)
+        if (currentCameraOption == CAMERA_OPTION.BIRD_VIEW)
         {
-            this.UpdateZoom(gameManager.distanceToHole);
-        }  else if (gameManager.distanceToHole > maxDistance) 
+            if (gameManager.distanceToHole >= minDistance && gameManager.distanceToHole <= maxDistance)
+            {
+                this.UpdateZoom(gameManager.distanceToHole);
+            }
+            else if (gameManager.distanceToHole > maxDistance)
+            {
+                Camera.main.fieldOfView = minZoom;
+            }
+
+            if (gameManager.distanceToHole >= minDistanceToFocus && gameManager.distanceToHole <= maxDistanceToFocus)
+            {
+                this.UpdateFocus(gameManager.distanceToHole);
+            }
+            else if (gameManager.distanceToHole > maxDistanceToFocus)
+            {
+                gameManager.focusPriority = 0;
+            };
+        }
+        else if (currentCameraOption == CAMERA_OPTION.FIRST_PERSON)
         {
-            Camera.main.fieldOfView = minZoom;
+
         }
 
-        if (gameManager.distanceToHole >= minDistanceToFocus && gameManager.distanceToHole <= maxDistanceToFocus)
-        {
-            this.UpdateFocus(gameManager.distanceToHole);
-        }
-        else if (gameManager.distanceToHole > maxDistanceToFocus)
-        {
-            gameManager.focusPriority = 0;
-        };
     }
 
     public void UpdateZoom(float distance)
@@ -59,4 +71,11 @@ public class CameraManager : MonoBehaviour
         gameManager.focusPriority = 1 - (distance * step);
 
     }
+}
+
+
+public enum CAMERA_OPTION
+{
+    BIRD_VIEW,
+    FIRST_PERSON
 }

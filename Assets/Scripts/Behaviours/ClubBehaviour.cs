@@ -5,16 +5,31 @@ using UnityEngine;
 public class ClubBehaviour : MonoBehaviour
 {
 
-    public GameObject ball, visual,head;
+    public GameObject visual,head;
     public GameObject Grip;
 
 
     Vector3 StartPosition,ProgressPosition, EndPosition;
     Vector3 mOffset;
     float mZCoord;
+    private EventController _evenController;
     private void Start()
     {
-    //    Cursor.visible = false;
+
+    }
+
+    private void OnEnable()
+    {
+        _evenController.BallIsHit += OnBallHit;
+    }
+
+    private void OnDisable()
+    {
+        _evenController.BallIsHit -= OnBallHit;
+
+    }
+    private void OnBallHit()
+    {
 
     }
 

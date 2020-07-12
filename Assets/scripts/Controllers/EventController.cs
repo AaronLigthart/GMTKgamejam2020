@@ -30,5 +30,16 @@ public class EventController : Singleton<EventController> {
     {
         OnPlayersAssignedSeats();
     }*/
-
+    public event Action BallIsHit;
+    void OnBallIsHit()
+    {
+        if (BallIsHit != null)
+        {
+            BallIsHit();
+        }
+    }
+    public void BallIsHitCall()
+    {
+        OnBallIsHit();
+    }
 }

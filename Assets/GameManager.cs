@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
     public LevelManager levelManager;
-        public GameObject ball;
+    public GameObject ball;
     public GameObject spawnPositon;
     public GameObject hole;
     public Transform cameraFocusPoint;
