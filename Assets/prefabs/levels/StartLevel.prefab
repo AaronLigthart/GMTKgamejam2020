@@ -260,6 +260,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: platform_round (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 218330039580665681, guid: da01eb8c22a81514c99e9e75df09daf1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 597987743639862763, guid: da01eb8c22a81514c99e9e75df09daf1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -349,6 +354,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: platform_round (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 218330039580665681, guid: da01eb8c22a81514c99e9e75df09daf1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 597987743639862763, guid: da01eb8c22a81514c99e9e75df09daf1,
         type: 3}
@@ -440,6 +450,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: platform_round (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 218330039580665681, guid: da01eb8c22a81514c99e9e75df09daf1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 597987743639862763, guid: da01eb8c22a81514c99e9e75df09daf1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -529,6 +544,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: platform_round
+      objectReference: {fileID: 0}
+    - target: {fileID: 218330039580665681, guid: da01eb8c22a81514c99e9e75df09daf1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 597987743639862763, guid: da01eb8c22a81514c99e9e75df09daf1,
         type: 3}
