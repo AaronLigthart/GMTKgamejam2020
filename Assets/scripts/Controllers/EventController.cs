@@ -42,4 +42,17 @@ public class EventController : Singleton<EventController> {
     {
         OnBallIsHit();
     }
+
+    public event Action<CAMERA_SHADER> ChangeCameraToShader;
+    void OnChangeCameraToShader(CAMERA_SHADER targetShader)
+    {
+        if (ChangeCameraToShader != null)
+        {
+            ChangeCameraToShader(targetShader);
+        }
+    }
+    public void ChangeCameraToShaderCall(CAMERA_SHADER targetShader)
+    {
+        OnChangeCameraToShader(targetShader);
+    }
 }
