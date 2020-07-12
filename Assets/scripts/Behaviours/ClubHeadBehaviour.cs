@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class ClubHeadBehaviour : MonoBehaviour
 {
-    public Rigidbody t;
+    public Rigidbody targetRigidbody;
     public LineRenderer line;
     public List<Vector3> VelocityPower = new List<Vector3>();
+    private EventController _eventController;
+
 
     private void Start()
     {
+        if (targetRigidbody == null)
+        {
+            targetRigidbody = GetComponent<Rigidbody>();
+        }
+        line = GameObject.Find("line").GetComponent<LineRenderer>();
+        _eventController = EventController.Instance;
         StartCoroutine(CheckVelocityPower());
     }
 
@@ -17,7 +25,7 @@ public class ClubHeadBehaviour : MonoBehaviour
     {
         while (true)
         {
-            VelocityPower.Add(t.velocity);
+            VelocityPower.Add(targetRigidbody.velocity);
             if (VelocityPower.Count > 5)
             {
                 VelocityPower.RemoveAt(0);
@@ -31,17 +39,22 @@ public class ClubHeadBehaviour : MonoBehaviour
         Rigidbody t = collision.gameObject.GetComponent<Rigidbody>();
         if (t != null)
         {
-            //Vector3 x = ((t.velocity) + CheckReceivedDirection(t.transform.position) * (10*Vector3.Distance(VelocityPower[0], VelocityPower[VelocityPower.Count - 1])));
-            Vector3 x = (CheckReceivedDirection(t.transform.position) * 10);
+            Vector3 x = (CheckReceivedDirection(t.transform.position) * (15*Vector3.Distance(VelocityPower[0], VelocityPower[VelocityPower.Count - 1])));
             VelocityPower.Clear();
+            t.angularDrag = 0;
+            t.angularVelocity = Vector3.zero;
             x.y = 0;
-            t.AddForce(x * 100);
-            Debug.Log(t.gameObject.name + " -- " + x + "WORK");
+            Debug.Log("<color=blue> x = " + t.velocity + "</color>");
+            t.AddForce(x + t.velocity, ForceMode.Impulse);
             if (line != null)
             {
                 line.SetPosition(0, t.transform.position);
                 line.SetPosition(1, t.transform.position + (x));
 
+            }
+            if (t.name == "Ball")
+            {
+                _eventController.BallIsHitCall();
             }
         }
 

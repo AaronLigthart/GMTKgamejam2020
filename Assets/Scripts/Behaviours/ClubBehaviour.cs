@@ -12,10 +12,12 @@ public class ClubBehaviour : MonoBehaviour
     Vector3 StartPosition,ProgressPosition, EndPosition;
     Vector3 mOffset;
     float mZCoord;
+    private bool tempLock = false;
     private EventController _evenController;
     private void Start()
     {
-        Cursor.visible = false;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Confined;
     }
 
     private void OnEnable()
@@ -31,30 +33,49 @@ public class ClubBehaviour : MonoBehaviour
     }
     private void OnBallHit()
     {
+        StopCoroutine("removeLockInSecond");
+        tempLock = true;
+        StartCoroutine("removeLockInSecond");
+    }
 
+    private IEnumerator removeLockInSecond()
+    {
+        yield return new WaitForSeconds(0.5f);
+        tempLock = false;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (tempLock == false)
         {
-            mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
-            mOffset = Grip.transform.position - GetMouseWorldPos();
-        }
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 targetPos = GetMouseWorldPos() + mOffset;
-            targetPos.y = Grip.transform.position.y;
-            Grip.transform.position = targetPos;
+            if (Input.GetMouseButtonDown(0))
+            {
+                mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
+                mOffset = Grip.transform.position - GetMouseWorldPos();
+            }
+            if (Input.GetMouseButton(0))
+            {
+                Vector3 targetPos = GetMouseWorldPos() + mOffset;
+                targetPos.y = Grip.transform.position.y;
+                Grip.transform.position = Vector3.Lerp(Grip.transform.position, targetPos, 11f);
+
+            }
+
 
         }
+        if (Input.GetMouseButtonUp(0))
+        {
+            tempLock = false;
+        }
+
+        GameManager.Instance.ball.transform.LookAt(this.transform);
 
     }
 
     Vector3 GetMouseWorldPos()
     {
         Vector3 mousPos = Input.mousePosition;
-        mousPos.z = mZCoord;
+        mousPos.z = mZCoord * 3f;
         return Camera.main.ScreenToWorldPoint(mousPos);
     }
 
