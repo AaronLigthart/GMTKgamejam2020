@@ -44,7 +44,7 @@ public class EventController : Singleton<EventController> {
     }
 
     public event Action<CAMERA_SHADER> ChangeCameraToShader;
-    void OnChangeCameraToShader(CAMERA_SHADER targetShader)
+    public void OnChangeCameraToShader(CAMERA_SHADER targetShader)
     {
         if (ChangeCameraToShader != null)
         {

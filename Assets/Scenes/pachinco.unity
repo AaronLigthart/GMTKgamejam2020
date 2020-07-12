@@ -1322,31 +1322,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2045982483136849212, guid: e9ed56c5d77c64245b2d731e6d78837d,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 152689751}
-    - target: {fileID: 3332619866160916390, guid: e9ed56c5d77c64245b2d731e6d78837d,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 152689751}
-    - target: {fileID: 3632047124177172153, guid: e9ed56c5d77c64245b2d731e6d78837d,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 152689751}
-    - target: {fileID: 4060079904053349096, guid: e9ed56c5d77c64245b2d731e6d78837d,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 152689751}
-    - target: {fileID: 5417361508570349293, guid: e9ed56c5d77c64245b2d731e6d78837d,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 152689751}
     - target: {fileID: 6287502017312699872, guid: e9ed56c5d77c64245b2d731e6d78837d,
         type: 3}
       propertyPath: m_Name
@@ -1412,21 +1387,6 @@ PrefabInstance:
       propertyPath: pachincoCamera
       value: 
       objectReference: {fileID: 1393556513}
-    - target: {fileID: 6303723959530639063, guid: e9ed56c5d77c64245b2d731e6d78837d,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 152689751}
-    - target: {fileID: 7073980841813049006, guid: e9ed56c5d77c64245b2d731e6d78837d,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 152689751}
-    - target: {fileID: 8113353725741668130, guid: e9ed56c5d77c64245b2d731e6d78837d,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 152689751}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ed56c5d77c64245b2d731e6d78837d, type: 3}
 --- !u!1001 &7594682386315374626

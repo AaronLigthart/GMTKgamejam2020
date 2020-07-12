@@ -17,13 +17,14 @@ public class GameManager : Singleton<GameManager>
     public TextMeshProUGUI windStrengthText;
     public float distanceToHole;
     public float focusPriority;
-
+    private EventController _eventController;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        _eventController = EventController.Instance;
         ballRigidbody = ball.GetComponent<Rigidbody>();
 
         Invoke("LateStart", 0.1f);
@@ -76,6 +77,30 @@ public class GameManager : Singleton<GameManager>
     {
         print(eventName);
         levelManager.gotoNextLevel();
+        print(eventName);
+   
+        switch (eventName)
+        {
+            case "smallBall":
+                ball.transform.localScale.Set(0.5f, 0.5f, 0.5f);
+                ballRigidbody.mass = 5;
+                break;
+
+            case "bigBall":
+                ball.transform.localScale.Set(2f, 2f, 2f);
+                ballRigidbody.mass = 30;
+                break;
+            case "flipScreen":
+                ball.transform.localScale.Set(1f, 1f, 1f);
+                ballRigidbody.mass = 10f;
+                Debug.Log(CAMERA_SHADER.DRUNK1);
+                _eventController.ChangeCameraToShaderCall(CAMERA_SHADER.DRUNK1);
+
+                break;
+            default:
+                print("HAHALOl");
+                break;
+        }
     }
 
     public void StartPachinco()
