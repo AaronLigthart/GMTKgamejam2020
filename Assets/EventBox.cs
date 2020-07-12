@@ -26,6 +26,7 @@ public class EventBox : MonoBehaviour
 
     public void SetEvent()
     {
+        gameManager.pachincoManager.Stop();
         gameManager.DoEvent(eventOnHit.ToString());
     }
 }

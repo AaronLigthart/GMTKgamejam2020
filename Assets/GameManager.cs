@@ -10,7 +10,7 @@ public class GameManager : Singleton<GameManager>
     public GameObject spawnPositon;
     public GameObject hole;
     public GameObject cameraFocusPoint;
-
+    public PachincoManager pachincoManager;
     private Rigidbody ballRigidbody;
     public TextMeshProUGUI instructionText;
     public TextMeshProUGUI distanceText;
@@ -75,5 +75,11 @@ public class GameManager : Singleton<GameManager>
     public void DoEvent(string eventName)
     {
         print(eventName);
+        levelManager.gotoNextLevel();
+    }
+
+    public void StartPachinco()
+    {
+        pachincoManager.Play();
     }
 }

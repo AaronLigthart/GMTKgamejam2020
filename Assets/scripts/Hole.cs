@@ -11,7 +11,7 @@ public class Hole : MonoBehaviour
     {
        if(other.tag == "Ball")
         {
-            other.GetComponent<Ball>().gameManager.levelManager.gotoNextLevel();
+            other.GetComponent<Ball>().gameManager.StartPachinco();
         }
     }
     

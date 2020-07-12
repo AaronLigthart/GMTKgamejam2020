@@ -11,6 +11,8 @@ public class PachincoManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        pachincoCamera.enabled = false;
+
         ball.transform.SetPositionAndRotation(getRandomStartPosition(), Quaternion.identity);
     }
 
@@ -21,6 +23,23 @@ public class PachincoManager : MonoBehaviour
 
         Vector3 pos = new Vector3(randomX, randomY, spawn.transform.position.z);
         return pos;
+    }
+
+    public void Play()
+    {
+        pachincoCamera.enabled = true;
+        ball.transform.SetPositionAndRotation(getRandomStartPosition(), Quaternion.identity);
+        ball.SetActive(true);
+    }
+
+    public void Stop()
+    {
+        Invoke("TurnOffCamera", 1);
+    }
+
+    public void TurnOffCamera()
+    {
+        pachincoCamera.enabled = false;
     }
 
     // Update is called once per frame
