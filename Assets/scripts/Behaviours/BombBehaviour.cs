@@ -46,6 +46,7 @@ public class BombBehaviour : MonoBehaviour
         head.usedBombs.Remove(this);
         head.availableBombs.Add(this);
         head.ReceiveExplosionAt(transform.position);
+        head.ShowExplosion(transform.position);
     }
 
     private IEnumerator Timer()

@@ -13,6 +13,7 @@ public class BallExplosionBehaviour : MonoBehaviour
     private GameManager _gameManager;
     public float explosionPower = 500;
     public float explosionRadius = 20;
+    public GameObject Particle;
     private void Start()
     {
         _gameManager = GameManager.Instance;
@@ -50,6 +51,10 @@ public class BallExplosionBehaviour : MonoBehaviour
 
             }
         }
+    }
+    public void ShowExplosion(Vector3 posOfExplosion)
+    {
+        GameObject t = Instantiate(Particle, posOfExplosion, Quaternion.identity) as GameObject;
     }
 
     public void ReceiveExplosionAt(Vector3 posOfExplosion)
