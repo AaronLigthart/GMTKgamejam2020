@@ -75,9 +75,7 @@ public class GameManager : Singleton<GameManager>
 
     public void DoEvent(string eventName)
     {
-        print(eventName);
         levelManager.gotoNextLevel();
-        print(eventName);
    
         switch (eventName)
         {

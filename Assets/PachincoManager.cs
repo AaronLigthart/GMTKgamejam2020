@@ -8,12 +8,14 @@ public class PachincoManager : MonoBehaviour
     public GameObject spawn;
     public Camera pachincoCamera;
     public float radius;
+    private AudioManager _audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
         pachincoCamera.enabled = false;
         ball.transform.SetPositionAndRotation(getRandomStartPosition(), Quaternion.identity);
-        
+        _audioManager = AudioManager.Instance;
     }
 
     public Vector3 getRandomStartPosition()
@@ -30,11 +32,14 @@ public class PachincoManager : MonoBehaviour
         pachincoCamera.enabled = true;
         ball.transform.SetPositionAndRotation(getRandomStartPosition(), Quaternion.identity);
         ball.SetActive(true);
+        _audioManager.ChangeMusicToPanchinko();
+        _audioManager.OnPanchinkoStart(transform.position);
     }
 
     public void Stop()
     {
-
+        _audioManager.OnPanchinkoEnd(transform.position);
+        _audioManager.ChangeMusicToMainMusic();
         Invoke("TurnOffCamera", 1);
     }
 

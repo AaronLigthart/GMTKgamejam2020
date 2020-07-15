@@ -11,12 +11,16 @@ public class BallExplosionBehaviour : MonoBehaviour
     public GameObject ball;
     public GameObject hole;
     private GameManager _gameManager;
+    private AudioManager _audioManager;
     public float explosionPower = 500;
     public float explosionRadius = 20;
     public GameObject Particle;
+
+
     private void Start()
     {
         _gameManager = GameManager.Instance;
+        _audioManager = AudioManager.Instance;
         ball = _gameManager.ball;
         hole = _gameManager.hole;
         for (int i = 0; i < availableBombs.Count; i++)
@@ -52,6 +56,7 @@ public class BallExplosionBehaviour : MonoBehaviour
             }
         }
     }
+
     public void ShowExplosion(Vector3 posOfExplosion)
     {
         GameObject t = Instantiate(Particle, posOfExplosion, Quaternion.identity) as GameObject;
@@ -59,6 +64,7 @@ public class BallExplosionBehaviour : MonoBehaviour
 
     public void ReceiveExplosionAt(Vector3 posOfExplosion)
     {
+        _audioManager.OnBallHit(posOfExplosion);
         ball.GetComponent<Rigidbody>().AddExplosionForce(explosionPower, posOfExplosion, explosionRadius);
     }
 }

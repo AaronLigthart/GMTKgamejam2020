@@ -17,7 +17,6 @@ public class CameraShaderChanger : MonoBehaviour
         MonoBehaviour[] t = GetComponents<MonoBehaviour>();
         for (int i = 0; i < t.Length; i++)
         {
-            Debug.Log(t[i].ToString());
             if (t[i].ToString().Contains("CameraFilt"))
             {
 
@@ -38,7 +37,6 @@ public class CameraShaderChanger : MonoBehaviour
         {
             tList[i].enabled = false;
         }
-        Debug.Log("we get passed this = " + targetShader);
         switch (targetShader)
         {
             case CAMERA_SHADER.VCR:
