@@ -27,6 +27,7 @@ public class CameraShaderChanger : MonoBehaviour
     }
     private void OnEnable()
     {
+        _eventController = EventController.Instance;
         _eventController.ChangeCameraToShader += ChangeCameraVisual;
     }
 
@@ -37,6 +38,7 @@ public class CameraShaderChanger : MonoBehaviour
         {
             tList[i].enabled = false;
         }
+        Debug.Log("we get passed this = " + targetShader);
         switch (targetShader)
         {
             case CAMERA_SHADER.VCR:

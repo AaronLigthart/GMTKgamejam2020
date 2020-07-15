@@ -351,6 +351,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: platform_round (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 218330039580665681, guid: da01eb8c22a81514c99e9e75df09daf1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 597987743639862763, guid: da01eb8c22a81514c99e9e75df09daf1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -911,6 +916,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: platform_round (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 218330039580665681, guid: da01eb8c22a81514c99e9e75df09daf1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 597987743639862763, guid: da01eb8c22a81514c99e9e75df09daf1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1103,6 +1113,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: hole
       objectReference: {fileID: 0}
+    - target: {fileID: 6146179896500651283, guid: 96712925ecb977040a14e24d053170b7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 6773500296353144745, guid: 96712925ecb977040a14e24d053170b7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1278,6 +1293,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: platform_round (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 218330039580665681, guid: da01eb8c22a81514c99e9e75df09daf1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 597987743639862763, guid: da01eb8c22a81514c99e9e75df09daf1,
         type: 3}
@@ -1548,6 +1568,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: platform_round (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 218330039580665681, guid: da01eb8c22a81514c99e9e75df09daf1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 597987743639862763, guid: da01eb8c22a81514c99e9e75df09daf1,
         type: 3}

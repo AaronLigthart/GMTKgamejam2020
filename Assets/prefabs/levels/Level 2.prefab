@@ -253,6 +253,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: platform Square
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b6c21339f2cfb1841be37ff503a64583,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6c21339f2cfb1841be37ff503a64583, type: 3}
 --- !u!1 &271266741117655986 stripped
@@ -278,6 +283,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: platform_round
+      objectReference: {fileID: 0}
+    - target: {fileID: 218330039580665681, guid: da01eb8c22a81514c99e9e75df09daf1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 597987743639862763, guid: da01eb8c22a81514c99e9e75df09daf1,
         type: 3}
@@ -400,6 +410,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: hole
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146179896500651283, guid: 96712925ecb977040a14e24d053170b7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 6452241943770641862, guid: 96712925ecb977040a14e24d053170b7,
         type: 3}
@@ -575,6 +590,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: hole_hill
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2a679edebf7d1840908acb248d04d37,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2a679edebf7d1840908acb248d04d37, type: 3}

@@ -51,7 +51,7 @@ public class BombBehaviour : MonoBehaviour
 
     private IEnumerator Timer()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         gameObject.SetActive(false);
     }
 

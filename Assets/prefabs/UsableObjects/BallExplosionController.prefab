@@ -871,6 +871,8 @@ MonoBehaviour:
   hole: {fileID: 0}
   explosionPower: 3000
   explosionRadius: 5
+  Particle: {fileID: 1514398833916746117, guid: aa8310fd6b9ec1849af15c62975b27b0,
+    type: 3}
 --- !u!1 &1116071103286451399
 GameObject:
   m_ObjectHideFlags: 0

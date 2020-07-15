@@ -83,16 +83,18 @@ public class GameManager : Singleton<GameManager>
         {
             case "smallBall":
                 ball.transform.localScale.Set(0.5f, 0.5f, 0.5f);
-                ballRigidbody.mass = 5;
+                ballRigidbody.mass = 0.5f;
+                _eventController.ChangeCameraToShaderCall(CAMERA_SHADER.AURA);
                 break;
 
             case "bigBall":
                 ball.transform.localScale.Set(2f, 2f, 2f);
-                ballRigidbody.mass = 30;
+                ballRigidbody.mass = 3;
+                _eventController.ChangeCameraToShaderCall(CAMERA_SHADER.PIXEL);
                 break;
             case "flipScreen":
                 ball.transform.localScale.Set(1f, 1f, 1f);
-                ballRigidbody.mass = 10f;
+                ballRigidbody.mass = 5;
                 Debug.Log(CAMERA_SHADER.DRUNK1);
                 _eventController.ChangeCameraToShaderCall(CAMERA_SHADER.DRUNK1);
 
